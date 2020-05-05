@@ -1,0 +1,44 @@
+{
+  "name": "todo-app",
+  "version": "1.0.0",
+  "description": "Simple React Todo App using Ant Design",
+  "keywords": [
+    "react",
+    "antd",
+    "todo",
+    "todos"
+  ],
+  "main": "src/index.js",
+  "dependencies": {
+    "antd": "3.26.16",
+    "react": "16.12.0",
+    "react-dom": "16.12.0",
+    "react-redux": "7.2.0",
+    "react-router-dom": "5.1.2",
+    "react-scripts": "3.0.1",
+    "redux": "4.0.5",
+    "redux-thunk": "2.3.0"
+  },
+  "devDependencies": {
+    "npm-force-resolutions": "0.0.3",
+    "prettier": "2.0.5",
+    "typescript": "3.8.3"
+  },
+  "resolutions": {
+    "moment": "2.24.0"
+  },
+  "scripts": {
+    "preinstall": "npx npm-force-resolutions",
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject",
+    "format": "prettier \"**/*.{js,css}\" --write"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ]
+}

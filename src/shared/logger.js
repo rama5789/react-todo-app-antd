@@ -1,10 +1,11 @@
 // import moment from 'moment';
-import moment from '../../node_modules/antd/node_modules/moment'; // temporary
+// import moment from '../../node_modules/antd/node_modules/moment'; // temporary
 
-export const log = (tag, funcName, env = 'development') => {
+export const log = (tag, funcName, env = 'sandbox') => {
   if (env === 'development' && tag) {
     // const currentDateTime = moment().format('MMMM Do YYYY, h:mm:ss a');
-    const currentDateTime = moment().format('h:mm:ss a');
+    // const currentDateTime = moment().format('h:mm:ss a');
+    const currentDateTime = new Date();
     if (funcName) {
       console.log(
         `\n ${currentDateTime} <--- ${tag}__${funcName}() triggered --->`

@@ -13,15 +13,15 @@ import './styles.css';
 import 'antd/dist/antd.css';
 
 // TAGS
-const TAG_RootContainerFC_FC = 'RootContainerFC_FC';
-const TAG_App_FC = 'App_FC';
+const TAG_RootContainerFC = 'RootContainerFC_FC';
+const TAG_App = 'App_FC';
 
 // configure redux store
 const store = configureStore();
 
 // Main Container Component
 function RootContainerFC() {
-  log(TAG_RootContainerFC_FC);
+  log(TAG_RootContainerFC);
 
   return (
     <BrowserRouter>
@@ -37,7 +37,7 @@ let RootContainer = connect()(RootContainerFC);
 
 // Main Component
 function App() {
-  log(TAG_App_FC);
+  log(TAG_App);
 
   return (
     <div className="App">

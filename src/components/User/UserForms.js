@@ -1,7 +1,6 @@
 import React from 'react';
 import {
   Button,
-  Modal,
   Form,
   Input,
   InputNumber,
@@ -10,6 +9,9 @@ import {
   Divider
 } from 'antd';
 
+import CreatePopupForm from '../Common/CreatePopupForm';
+
+import { FORM_TYPE } from '../../shared/constants';
 import { log } from '../../shared/logger';
 
 // TAGS
@@ -25,53 +27,18 @@ class CreateUser extends React.Component {
     log(TAG_CreateUser, 'render');
 
     const { visible, onCancel, onCreate, saveBtnloading, form } = this.props;
-    const { getFieldDecorator } = form;
 
     return (
       <div className="CreateUser">
-        <Modal
-          visible={visible}
+        <CreatePopupForm
           title="Create New User"
-          /* Modal Cancel(X) */
+          visible={visible}
           onCancel={onCancel}
-          /* Customized Footer Buttons */
-          footer={[
-            <Button key="back" onClick={onCancel}>
-              Cancel
-            </Button>,
-            <Button
-              key="submit"
-              type="primary"
-              loading={saveBtnloading}
-              onClick={onCreate}>
-              Save
-            </Button>
-          ]}>
-          {/* Add User Form*/}
-          <Form layout="vertical">
-            {/* "name" input */}
-            <Form.Item label="Name">
-              {getFieldDecorator('name', {
-                rules: [{ required: true, message: 'Please provide Name!' }]
-              })(<Input placeholder="Name" />)}
-            </Form.Item>
-            {/* "email" input */}
-            <Form.Item label="Email">
-              {getFieldDecorator('email', {
-                rules: [
-                  {
-                    required: true,
-                    message: 'Please provide Email!'
-                  },
-                  {
-                    type: 'email',
-                    message: 'The input is not a valid E-mail!'
-                  }
-                ]
-              })(<Input placeholder="Email" />)}
-            </Form.Item>
-          </Form>
-        </Modal>
+          onCreate={onCreate}
+          saveBtnloading={saveBtnloading}
+          form={form}
+          popupformType={FORM_TYPE.users.create}
+        />
       </div>
     );
   }

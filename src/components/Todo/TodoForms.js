@@ -1,7 +1,6 @@
 import React from 'react';
 import {
   Button,
-  Modal,
   Form,
   Input,
   InputNumber,
@@ -12,6 +11,9 @@ import {
 } from 'antd';
 import moment from 'moment';
 
+import CreatePopupForm from '../Common/CreatePopupForm';
+
+import { FORM_TYPE } from '../../shared/constants';
 import { log } from '../../shared/logger';
 
 // TAGS
@@ -29,50 +31,18 @@ class CreateTodo extends React.Component {
     log(TAG_CreateTodo, 'render');
 
     const { visible, onCancel, onCreate, saveBtnloading, form } = this.props;
-    const { getFieldDecorator } = form;
 
     return (
       <div className="CreateTodo">
-        <Modal
-          visible={visible}
+        <CreatePopupForm
           title="Create New Todo"
-          /* Modal Cancel(X) */
+          visible={visible}
           onCancel={onCancel}
-          /* Customized Footer Buttons */
-          footer={[
-            <Button key="back" onClick={onCancel}>
-              Cancel
-            </Button>,
-            <Button
-              key="submit"
-              type="primary"
-              loading={saveBtnloading}
-              onClick={onCreate}>
-              Save
-            </Button>
-          ]}>
-          {/* Add Todo Form*/}
-          <Form layout="vertical">
-            {/* "action" input */}
-            <Form.Item label="Action">
-              {getFieldDecorator('action', {
-                rules: [{ required: true, message: 'Please provide Action!' }]
-              })(<Input placeholder="Action" />)}
-            </Form.Item>
-            {/* "dateAdded" input */}
-            <Form.Item label="DateAdded">
-              {getFieldDecorator('dateAdded', {
-                rules: [
-                  {
-                    type: 'object',
-                    required: true,
-                    message: 'Please select DateTime!'
-                  }
-                ]
-              })(<DatePicker showTime format={momentFormat} />)}
-            </Form.Item>
-          </Form>
-        </Modal>
+          onCreate={onCreate}
+          saveBtnloading={saveBtnloading}
+          form={form}
+          popupformType={FORM_TYPE.todos.create}
+        />
       </div>
     );
   }
@@ -151,7 +121,6 @@ class TodoEditableCell extends React.Component {
     );
   }
 }
-
 class EditDeleteTodo extends React.Component {
   constructor(props) {
     super(props);

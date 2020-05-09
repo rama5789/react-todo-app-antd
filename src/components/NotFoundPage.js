@@ -3,10 +3,10 @@ import React from 'react';
 import { log } from '../shared/logger';
 
 // TAGS
-const TAG_NotFoundPage_FC = 'NotFoundPage_FC';
+const TAG_NotFoundPage = 'NotFoundPage_FC';
 
 const NotFoundPage = () => {
-  log(TAG_NotFoundPage_FC);
+  log(TAG_NotFoundPage);
 
   return (
     <div className="App-NotFound">

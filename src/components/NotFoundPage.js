@@ -9,7 +9,7 @@ const NotFoundPage = () => {
   log(TAG_NotFoundPage_FC);
 
   return (
-    <div>
+    <div className="App-NotFound">
       <center>
         <br />
         <h1 style={{ color: 'red' }}>404</h1>

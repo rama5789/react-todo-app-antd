@@ -1,9 +1,9 @@
 import { ADD_TODO, EDIT_TODO, DELETE_TODO } from '../actionTypes';
-import { sampleTodosData } from '../sampleData';
+import { todosSampleData } from '../sampleData';
 
 /* initial "todos" state */
 // const initialState = [];
-const initialState = sampleTodosData;
+const initialState = todosSampleData;
 
 const addTodo = (currentState, action) => {
   const { params } = action.payload;

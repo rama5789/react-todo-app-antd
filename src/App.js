@@ -40,9 +40,11 @@ function App() {
   log(TAG_App_FC);
 
   return (
-    <Provider store={store}>
-      <RootContainer />
-    </Provider>
+    <div className="App">
+      <Provider store={store}>
+        <RootContainer />
+      </Provider>
+    </div>
   );
 }
 

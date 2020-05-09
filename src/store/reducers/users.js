@@ -1,9 +1,9 @@
 import { ADD_USER, EDIT_USER, DELETE_USER } from '../actionTypes';
-import { sampleUsersData } from '../sampleData';
+import { usersSampleData } from '../sampleData';
 
 /* initial "users" state */
 // const initialState = [];
-const initialState = sampleUsersData;
+const initialState = usersSampleData;
 
 const addUser = (currentState, action) => {
   const { params } = action.payload;

@@ -1,4 +1,15 @@
+body {
+  background-color: #f8f6f6;
+}
+
 .App {
   font-family: sans-serif;
-  text-align: center;
+  margin: 50px auto;
+  max-width: 800px;
+  padding: 20px;
+  background-color: #fff;
+}
+
+.CreateModalButton {
+  padding-bottom: 20px;
 }
